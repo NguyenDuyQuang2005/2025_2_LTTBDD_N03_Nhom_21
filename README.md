@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # btltodolist
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# 2025_2_LTTBDD_N03_Nhom_21
+>>>>>>> 4f73f25e82b818285f129f4d5df02ece9b30d8d0
