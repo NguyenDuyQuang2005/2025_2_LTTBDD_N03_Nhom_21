@@ -1,20 +1,4 @@
-<<<<<<< HEAD
-# btltodolist
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
 # 2025_2_LTTBDD_N03_Nhom_21
->>>>>>> 4f73f25e82b818285f129f4d5df02ece9b30d8d0
+Thông tin nhóm:
+1- Nguyễn Duy Quang-23010448
+2- Nguyễn Kiến Quốc -23010041
