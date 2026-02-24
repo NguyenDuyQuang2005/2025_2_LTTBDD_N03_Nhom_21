@@ -14,6 +14,7 @@ class HomeDetails extends StatelessWidget {
         Column(
           children: [
             Image.asset('assets/images/weather/ph_wind.png'),
+            Text('Gió', style: TextStyle(fontSize: 18, color: Colors.white)),
             Text(
               '${wind} km/h',
               style: TextStyle(fontSize: 18, color: Colors.white),
@@ -23,6 +24,8 @@ class HomeDetails extends StatelessWidget {
         Column(
           children: [
             Image.asset('assets/images/weather/humidity.png'),
+            SizedBox(height: 4),
+            Text('Độ ẩm', style: TextStyle(fontSize: 18, color: Colors.white)),
             Text(
               '${humidity}%',
               style: TextStyle(fontSize: 18, color: Colors.white),
