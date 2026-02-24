@@ -6,20 +6,27 @@ class HomeLocation extends StatelessWidget {
 
   final String nameLocation;
 
+  static const Map<String, String> cityVietnamese = {
+    "Hanoi": "Hà Nội",
+    "Ho Chi Minh City": "TP. Hồ Chí Minh",
+    "Da Nang": "Đà Nẵng",
+    "Can Tho": "Cần Thơ",
+  };
+
   @override
   Widget build(BuildContext context) {
     final df = DateFormat('dd-MM-yyyy');
-
+    String displayName = cityVietnamese[nameLocation] ?? nameLocation;
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('images/weather/vitri.png'),
+            Image.asset('assets/images/weather/vitri.png'),
             SizedBox(width: 10),
             Text(
-              nameLocation,
-              style: TextStyle(fontSize: 28, color: Colors.white),
+              displayName,
+              style: const TextStyle(fontSize: 28, color: Colors.white),
             ),
           ],
         ),

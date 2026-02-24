@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xff1D6CF3), Color(0xff1902FE)],
+            colors: [Color(0xff3A8DFF), Color(0xff1E3C72)],
           ),
         ),
         child: FutureBuilder<WeatherData>(
@@ -55,6 +55,10 @@ class _HomePageState extends State<HomePage> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  'Dự báo thời tiết',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                ),
                 HomeWeather(nameIcon: data.weather[0].main),
                 HomeTemperature(temp: data.main.temp),
                 const SizedBox(height: 10),

@@ -8,11 +8,12 @@ class HomeWeather extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.sizeOf(context);
-    return Container(
-      width: 100,
-      padding: EdgeInsets.all(20.0),
-      child: Image.asset(AssetCustom.getLinkImg(nameIcon), fit: BoxFit.cover),
+    final size = MediaQuery.sizeOf(context);
+
+    return SizedBox(
+      width: size.width * 0.4, // 40% chiều ngang màn hình
+      height: size.width * 0.4,
+      child: Image.asset(AssetCustom.getLinkImg(nameIcon), fit: BoxFit.contain),
     );
   }
 }
