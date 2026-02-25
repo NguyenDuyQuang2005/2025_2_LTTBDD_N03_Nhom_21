@@ -7,4 +7,9 @@ class WeatherProvider extends ChangeNotifier {
     WeatherData weather = await Api.callApiGetWeather();
     return weather;
   }
+
+  Future<List<WeatherDetail>> getWeatherDetail() async {
+    List<WeatherDetail> result = await Api.callApiGetWeatherDetail();
+    return result;
+  }
 }
