@@ -1,7 +1,6 @@
 import 'package:btltodolist/app/config/theme_custom.dart';
 import 'package:btltodolist/page/bottom_navigation_custom/bottom_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:btltodolist/page/home/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:btltodolist/providers/weather_provider.dart';
 

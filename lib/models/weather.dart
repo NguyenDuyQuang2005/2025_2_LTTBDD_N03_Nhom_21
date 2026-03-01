@@ -34,6 +34,7 @@ class Main {
   final double tempMin;
   final double tempMax;
   final int humidity;
+  final int pressure;
 
   const Main({
     required this.temp,
@@ -41,6 +42,7 @@ class Main {
     required this.tempMin,
     required this.tempMax,
     required this.humidity,
+    required this.pressure,
   });
 
   factory Main.fromMap(Map<String, dynamic> map) {
@@ -50,6 +52,7 @@ class Main {
       tempMin: (map['temp_min'] as num).toDouble(),
       tempMax: (map['temp_max'] as num).toDouble(),
       humidity: map['humidity'] as int,
+      pressure: map['pressure'] as int,
     );
   }
 

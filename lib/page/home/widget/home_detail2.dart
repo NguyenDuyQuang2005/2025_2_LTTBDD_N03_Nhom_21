@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeDetails extends StatelessWidget {
-  const HomeDetails({super.key, required this.wind, required this.humidity});
+class HomeDetails2 extends StatelessWidget {
+  const HomeDetails2({super.key, required this.wind, required this.pressure});
 
   final num wind;
-  final num humidity;
+  final num pressure;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,10 @@ class HomeDetails extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/weather/ph_wind.png', height: 50),
+                  Image.asset('assets/images/icons/clear.png', height: 50),
                   const SizedBox(height: 12),
                   const Text(
-                    'Gió',
+                    'Chỉ số UV',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
@@ -39,7 +39,7 @@ class HomeDetails extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${wind.toStringAsFixed(1)} km/h',
+                    'Cao',
                     style: const TextStyle(fontSize: 18, color: Colors.white70),
                   ),
                 ],
@@ -62,19 +62,19 @@ class HomeDetails extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/weather/humidity.png', height: 50),
+                  Image.asset('assets/images/icons/fog.png', height: 50),
                   const SizedBox(height: 12),
                   const Text(
-                    'Độ ẩm',
+                    'Áp suất',
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 8),
                   Text(
-                    '$humidity%',
+                    '$pressure hPa',
                     style: const TextStyle(fontSize: 18, color: Colors.white70),
                   ),
                 ],

@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 const linkAsset = 'assets/images/icons/';
 
 class AssetCustom {
-  //  static String getLinkImg(String nameIcon) =>
-  //     '$linkAsset${nameIcon.replaceAll(' ', '_').toLowerCase()}.png';
-  static String getLinkImg(String nameIcon) {
-    if (nameIcon.toLowerCase() == 'rain') {
-      return '${linkAsset}clouds.png'; // Dùng heavyrain thay thế
+  static String getLinkImg(String main) {
+    switch (main.toLowerCase()) {
+      case 'clear':
+        return '${linkAsset}clouds.png';
+
+      case 'clouds':
+        return '${linkAsset}clear.png';
+
+      case 'rain':
+      case 'drizzle':
+        return '${linkAsset}heavyrain.png';
+
+      case 'thunderstorm':
+        return '${linkAsset}storm.png';
+
+      case 'snow':
+        return '${linkAsset}snow.png';
+
+      case 'mist':
+      case 'smoke':
+      case 'haze':
+      case 'fog':
+      case 'dust':
+      case 'sand':
+      case 'ash':
+        return '${linkAsset}mist.png';
+
+      case 'squall':
+        return '${linkAsset}wind.png';
+
+      case 'tornado':
+        return '${linkAsset}tornado.png';
+
+      default:
+        return '${linkAsset}default.png';
     }
-    return '$linkAsset${nameIcon.replaceAll(' ', '_').toLowerCase()}.png';
   }
 }
 

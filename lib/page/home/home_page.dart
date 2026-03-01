@@ -1,11 +1,11 @@
+import 'package:btltodolist/page/home/widget/home_date.dart';
+import 'package:btltodolist/page/home/widget/home_detail2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:btltodolist/models/weather.dart';
 import 'package:btltodolist/providers/weather_provider.dart';
 import 'package:btltodolist/page/home/widget/home_detailsweather.dart';
-import 'package:btltodolist/page/home/widget/home_location.dart';
 import 'package:btltodolist/page/home/widget/home_temperature.dart';
-import 'package:btltodolist/page/home/widget/home_weather.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xff3A8DFF), Color(0xff1E3C72)],
+            colors: [Color(0xFF86B0DE), Color(0xFF7FA9D6), Color(0xFF5F8FC6)],
           ),
         ),
         child: FutureBuilder<WeatherData>(
@@ -52,23 +52,52 @@ class _HomePageState extends State<HomePage> {
 
             final data = snapshot.data!;
 
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Dự báo thời tiết',
-                  style: TextStyle(fontSize: 24, color: Colors.white),
+            return SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 20),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+
+                      child: Text(
+                        'Quang Quốc Weather',
+                        style: TextStyle(
+                          fontSize: 24,
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white.withOpacity(0.9),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    HomeDate(nameLocation: data.name),
+                    SizedBox(height: 15),
+                    HomeTemperature(
+                      temp: data.main.temp,
+                      nameIcon: data.weather[0].main,
+                      tempMin: data.main.tempMin,
+                      tempMax: data.main.tempMax,
+                      feelsLike: data.main.feelsLike,
+                    ),
+
+                    const SizedBox(height: 30),
+
+                    HomeDetails(
+                      wind: data.wind.speed,
+                      humidity: data.main.humidity,
+                    ),
+                    SizedBox(height: 20),
+                    HomeDetails2(
+                      wind: data.wind.speed,
+                      pressure: data.main.pressure,
+                    ),
+                  ],
                 ),
-                HomeWeather(nameIcon: data.weather[0].main),
-                HomeTemperature(temp: data.main.temp),
-                const SizedBox(height: 10),
-                HomeLocation(nameLocation: data.name),
-                const SizedBox(height: 40),
-                HomeDetails(
-                  wind: data.wind.speed,
-                  humidity: data.main.humidity,
-                ),
-              ],
+              ),
             );
           },
         ),
