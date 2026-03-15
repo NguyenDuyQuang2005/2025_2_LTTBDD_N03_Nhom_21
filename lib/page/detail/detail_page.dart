@@ -15,7 +15,7 @@ class DetailPage extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Color(0xff3A8DFF), Color(0xff1E3C72)],
+          colors: [Color(0xFF86B0DE), Color(0xFF5F8FC6)],
         ),
       ),
       child: FutureBuilder(
@@ -32,7 +32,16 @@ class DetailPage extends StatelessWidget {
           }
 
           List<WeatherDetail> listData = snapshot.data as List<WeatherDetail>;
-
+          final List<String> availableTimes = [
+            '00:00',
+            '03:03',
+            '06:06',
+            '09:09',
+            '12:12',
+            '15:15',
+            '18:18',
+            '21:21',
+          ];
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
@@ -48,7 +57,24 @@ class DetailPage extends StatelessWidget {
                   ),
                 ],
               ),
-              actions: const [Icon(CupertinoIcons.search), SizedBox(width: 15)],
+              actions: [
+                PopupMenuButton<String>(
+                  icon: const Icon(CupertinoIcons.search, color: Colors.white),
+                  tooltip: 'Tìm kiếm theo giờ',
+                  onSelected: (String selectedTime) {
+                    debugPrint('Bạn đã chọn: $selectedTime');
+                  },
+                  itemBuilder: (BuildContext context) {
+                    return availableTimes.map((String time) {
+                      return PopupMenuItem<String>(
+                        value: time,
+                        child: Text(time),
+                      );
+                    }).toList();
+                  },
+                ),
+                const SizedBox(width: 15),
+              ],
             ),
             body: DetailBody(listData: listData),
           );
