@@ -14,8 +14,8 @@ class DetailBody extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       itemBuilder: (context, index) {
         DateTime dateTime = DateTime.parse(listData[index].dt_txt);
-        String formatDay = DateFormat('EEEE').format(dateTime);
-        String formatTime = DateFormat('HH:HH').format(dateTime);
+        String formatDay = DateFormat('EEEE', 'vi_VN').format(dateTime);
+        String formatTime = DateFormat('HH:mm').format(dateTime);
 
         return Container(
           padding: EdgeInsets.all(16.0),

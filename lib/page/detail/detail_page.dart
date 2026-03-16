@@ -52,7 +52,7 @@ class DetailPage extends StatelessWidget {
                   Icon(CupertinoIcons.location),
                   SizedBox(width: 15),
                   Text(
-                    'Ha Noi',
+                    'Hà Nội',
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ],

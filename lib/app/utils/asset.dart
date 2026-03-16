@@ -6,12 +6,14 @@ class AssetCustom {
   static String getLinkImg(String main) {
     switch (main.toLowerCase()) {
       case 'clear':
-        return '${linkAsset}clouds.png';
-
-      case 'clouds':
         return '${linkAsset}clear.png';
 
+      case 'clouds':
+        return '${linkAsset}cloudy.png';
+
       case 'rain':
+        return '${linkAsset}lightrain.png';
+
       case 'drizzle':
         return '${linkAsset}heavyrain.png';
 
