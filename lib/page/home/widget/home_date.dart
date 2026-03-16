@@ -21,6 +21,7 @@ class HomeDate extends StatelessWidget {
     String displayName = cityVietnamese[nameLocation] ?? nameLocation;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         //Location
@@ -41,7 +42,7 @@ class HomeDate extends StatelessWidget {
 
         ///Date + Time
         Padding(
-          padding: const EdgeInsets.only(right: 210),
+          padding: const EdgeInsets.only(left: 28),
           child: Text(
             '$date | $time',
             style: TextStyle(

@@ -33,7 +33,7 @@ class HomeDetails extends StatelessWidget {
                     'Gió',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.w600,
                     ),
                   ),

@@ -7,7 +7,13 @@ class DetailBody extends StatelessWidget {
   const DetailBody({super.key, required this.listData});
 
   final List<WeatherDetail> listData;
-
+  static const Map<String, String> weatherToVietnamese = {
+    "Clear": "Trời quang ",
+    "Clouds": "Nhiều mây",
+    "Rain": "Mưa",
+    "Drizzle": "Mưa phùn",
+    "Thunderstorm": "Giông bão",
+  };
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -16,7 +22,9 @@ class DetailBody extends StatelessWidget {
         DateTime dateTime = DateTime.parse(listData[index].dt_txt);
         String formatDay = DateFormat('EEEE', 'vi_VN').format(dateTime);
         String formatTime = DateFormat('HH:mm').format(dateTime);
-
+        String weatherMain =
+            weatherToVietnamese[listData[index].weather.main] ??
+            listData[index].weather.main;
         return Container(
           padding: EdgeInsets.all(16.0),
           decoration: BoxDecoration(
@@ -34,7 +42,7 @@ class DetailBody extends StatelessWidget {
                         createTemp(listData[index].main.temp, size: 25),
                         SizedBox(width: 10),
                         Text(
-                          listData[index].weather.main,
+                          weatherMain,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 22,
