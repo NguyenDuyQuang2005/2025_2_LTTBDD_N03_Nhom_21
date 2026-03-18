@@ -64,23 +64,6 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Nút chuyển sang trang thông tin nhóm
-                          IconButton(
-                            icon: const Icon(
-                              Icons.info_outline,
-                              color: Colors.white,
-                              size: 28,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AboutPage(),
-                                ),
-                              );
-                            },
-                          ),
-                          const SizedBox(width: 8),
                           Text(
                             'Quang Quốc Weather',
                             style: TextStyle(
