@@ -26,11 +26,7 @@ class AboutPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Image.asset(
-                'assets/images/weather/hinh-nen-anime-83.jpg',
-                width: 120,
-                height: 120,
-              ),
+              Icon(Icons.cloud_sharp, size: 80, color: Colors.white),
               const SizedBox(height: 16),
 
               Text(
