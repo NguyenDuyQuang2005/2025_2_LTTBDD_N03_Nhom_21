@@ -78,7 +78,7 @@ class HomeTemperature extends StatelessWidget {
         Image.asset(
           AssetCustom.getLinkImg(nameIcon),
           fit: BoxFit.contain,
-          height: 150,
+          height: 115,
         ),
       ],
     );

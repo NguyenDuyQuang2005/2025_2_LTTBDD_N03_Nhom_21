@@ -3,6 +3,7 @@ import 'package:btltodolist/page/bottom_navigation_custom/bottom_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:btltodolist/providers/weather_provider.dart';
+import 'package:btltodolist/page/about/about_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeCustom.themeLight,
         debugShowCheckedModeBanner: false,
-        home: const BottomNavigationCustom(),
+        home: const AboutPage(),
       ),
     );
   }

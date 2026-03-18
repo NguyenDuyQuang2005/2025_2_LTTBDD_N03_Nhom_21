@@ -1,3 +1,4 @@
+import 'package:btltodolist/page/about/about_page.dart';
 import 'package:btltodolist/page/home/widget/home_date.dart';
 import 'package:btltodolist/page/home/widget/home_detail2.dart';
 import 'package:flutter/material.dart';
@@ -60,18 +61,37 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 20),
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-
-                        child: Text(
-                          'Quang Quốc Weather',
-                          style: TextStyle(
-                            fontSize: 24,
-                            letterSpacing: 1.2,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white.withOpacity(0.9),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Nút chuyển sang trang thông tin nhóm
+                          IconButton(
+                            icon: const Icon(
+                              Icons.info_outline,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AboutPage(),
+                                ),
+                              );
+                            },
                           ),
-                        ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Quang Quốc Weather',
+                            style: TextStyle(
+                              fontSize: 24,
+                              letterSpacing: 1.2,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white.withOpacity(0.9),
+                            ),
+                          ),
+                          const SizedBox(width: 28),
+                        ],
                       ),
                       const SizedBox(height: 15),
                       HomeDate(nameLocation: data.name),
@@ -83,9 +103,7 @@ class _HomePageState extends State<HomePage> {
                         tempMax: data.main.tempMax,
                         feelsLike: data.main.feelsLike,
                       ),
-
                       const SizedBox(height: 30),
-
                       HomeDetails(
                         wind: data.wind.speed,
                         humidity: data.main.humidity,
